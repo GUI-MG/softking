@@ -52,45 +52,42 @@ function renderizarProdutos() {
         }
 
         const produtoHTML = `
-        <section class="produto">
-                <article class="card">
-                    <div class="card_header">
-                        <header>
-                            <h2>${produto.nome}</h2>
-                        </header>
+        <section class="produto" aria-label="${produto.nome}">
+            <article class="card">
+                <div class="card_header">
+                    <header>
+                        <h2>${produto.nome}</h2>
+                    </header>
+                </div>
+                <div class="card_image">
+                    <img src="../../assets/img/${getImagePorNome(produto.nome)}" alt="${produto.nome}">
+                </div>
+                <div class="card_description">
+                    <div class="card_description_header">
+                        <h4>Descrição:</h4>
                     </div>
-                        <div class="card_image">
-                            <img src="../../assets/img/${getImagePorNome(produto.nome)}" alt="${produto.nome}">
+                    <div class="card_description_body">
+                        <p>${produto.descricao}</p>
+                        ${containerTamanhos == '' ? '' : `
+                        <p><b>Obs.: Adicione um tamanho por vez ao carrinho.</b></p>
+                        <div id="tamanhos" class="container">
+                            ${containerTamanhos}
                         </div>
-                        <div class="card_description">
-                            <div class="card_description_header">
-                                <h4>Descrição:</h4>
-                            </div>
-                            <div class="card_description_body">
-                                <p>${produto.descricao}</p>
-                               ${containerTamanhos == '' ? '' : 
-                                `
-                                <p><b>Obs.: Adicione um tamanho por vez ao carrinho.</b></p>
-                                <div id="tamanhos" class="container">
-                                    ${containerTamanhos}
-                                </div>
-
-                                `}
-                            </div>
-                        </div>
-
-                        <div class="card_footer">
-                            <div class="actions">
-                                <button class="actionsButton" onclick="comprar(${produto.id})">
-                                    <i class="bi bi-bag-fill"></i>  Comprar
-                                </button>
-                                <button class="actionsButton" onclick="adicionarAoCarrinho(${produto.id})">
-                                    <i class="bi bi-cart"></i>  Adicionar ao carrinho
-                                </button>
-                            </div>
-                        </div>
-                </article>
-            </section>
+                        `}
+                    </div>
+                </div>
+                <div class="card_footer">
+                    <div class="actions">
+                        <button class="actionsButton" onclick="comprar(${produto.id})">
+                            <i class="bi bi-bag-fill"></i> Comprar
+                        </button>
+                        <button class="actionsButton" onclick="adicionarAoCarrinho(${produto.id})">
+                            <i class="bi bi-cart"></i> Adicionar ao carrinho
+                        </button>
+                    </div>
+                </div>
+            </article>
+        </section>
         `;
 
         container.innerHTML += produtoHTML;
