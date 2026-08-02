@@ -41,7 +41,9 @@ function renderizarProdutos() {
             
                 tamanhosHTML = `
                     <div id="segmentoTamanho">
-                        <input type="checkbox" id="tamanhoProduto" name="${produto.tamanhos[i]}" value="${produto.tamanhos[i]}" onclick="selecionarTamanho([${produto.id}, '${produto.tamanhos[i]}'])">
+                        <input type="checkbox" id="tamanhoProduto" 
+                        name="${produto.tamanhos[i]}" value="${produto.tamanhos[i]}" 
+                        onclick="selecionarTamanho([${produto.id}, '${produto.tamanhos[i]}'])">
                         <label for="tamanhoProduto">${produto.tamanhos[i]}</label>
                     </div>
                 `;
@@ -121,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function comprar() {
     Swal.fire ({
         title: 'Perfeito!',
-        text: `Preparando tudo para sua compra...
+        text: `Preparando tudo para sua compra... \n
         Direcionando para a página de finalização de compra.
         `,
         icon: 'success',
