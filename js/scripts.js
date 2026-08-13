@@ -17,8 +17,6 @@ var produtos = [
   { id: 10, nome: "México", descricao: "Camisa da Seleção Mexicana", tamanhos: ['P', 'M', 'G'], ativo: true, preco: 279.9, categoria: "camisa", estoque: [1450, 3000, 5000], quantidade: 0, tamanho: ""},
   { id: 11, nome: "Portugal", descricao: "Camisa da Seleção Portuguesa", tamanhos: ['P', 'M', 'G', 'GG'], ativo: true, preco: 320.99, categoria: "camisa", estoque: [4000, 3000 ,5000, 10000], quantidade: 0, tamanho: ""},
   { id: 12, nome: "Inglaterra", descricao: "Camisa da Seleção Inglesa", tamanhos: ['P', 'M', 'G'], ativo: true, preco: 270.9, categoria: "camisa", estoque: [5000, 12000, 15000], quantidade: 0, tamanho: ""},
-
-
 ];
 
 function renderizarProdutos() {
